@@ -1088,78 +1088,178 @@ img {
 
 @media (max-width: 640px) {
   :root {
-    --header-offset: 168px;
+    --header-offset: 96px;
   }
 
   .site-header,
   .section,
   .section-small,
   .site-footer {
-    width: min(calc(100% - 28px), var(--max-width));
+    width: min(calc(100% - 20px), var(--max-width));
   }
 
   .site-header {
-    top: 12px;
-    margin-top: 12px;
-    padding: 14px;
-    border-radius: 24px;
+    position: relative;
+    top: auto;
+    margin-top: 10px;
+    padding: 14px 14px 12px;
+    border-radius: 22px;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-items: stretch;
+    gap: 12px;
+  }
+
+  .brand {
+    grid-column: 1;
+  }
+
+  .brand img {
+    width: 126px;
+  }
+
+  .header-link {
+    grid-column: 2;
+    justify-self: end;
+    width: auto;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 0.95rem;
   }
 
   .site-nav {
-    gap: 6px;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
     padding: 6px;
   }
 
   .site-nav a {
     min-height: 38px;
-    padding: 0 12px;
+    width: 100%;
+    padding: 0 8px;
     font-size: 0.88rem;
   }
 
   .hero {
-    padding-top: 18px;
+    gap: 24px;
+    padding-top: 8px;
   }
 
   .hero h1 {
-    max-width: none;
-    font-size: clamp(3.7rem, 18vw, 5.3rem);
+    max-width: 9.6ch;
+    font-size: clamp(2.95rem, 12vw, 4rem);
+    line-height: 0.94;
+    text-wrap: balance;
+  }
+
+  .hero h1 span {
+    font-size: 0.7em;
   }
 
   .hero-text {
-    font-size: 0.98rem;
+    max-width: none;
+    margin-top: 18px;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 
-  .button,
-  .header-link {
-    width: 100%;
+  .hero-actions {
+    margin-top: 20px;
+  }
+
+  .button {
+    min-height: 52px;
+    padding: 0 20px;
+  }
+
+  .hero-points {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .hero-points li {
+    min-height: auto;
+    padding: 14px 14px 14px 36px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+  }
+
+  .hero-points li::before {
+    left: 14px;
+    top: 15px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-scene {
+    min-height: auto;
+  }
+
+  .scene-orbit,
+  .hero-glass-side {
+    display: none;
   }
 
   .hero-frame {
-    padding: 12px;
-    border-radius: 28px;
+    padding: 10px;
+    border-radius: 24px;
+    aspect-ratio: 0.92;
   }
 
   .hero-promo-image,
   .hero-frame::after {
-    border-radius: 20px;
+    border-radius: 18px;
   }
 
   .hero-glass-top,
-  .hero-glass-side,
   .hero-glass-bottom {
     position: relative;
     inset: auto;
     width: 100%;
     max-width: none;
-    margin-top: 14px;
+    margin-top: 10px;
+    border-radius: 18px;
+    transform: none;
+  }
+
+  .hero-glass-top {
+    padding: 14px 16px;
+  }
+
+  .hero-glass-top strong {
+    font-size: 1rem;
+  }
+
+  .hero-glass-top p {
+    margin-top: 8px;
+    font-size: 0.9rem;
   }
 
   .hero-glass-bottom {
     right: auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .section-small {
+    padding-top: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.15rem, 11vw, 3.2rem);
   }
 
   .stats-strip,
-  .equipment-grid {
+  .equipment-grid,
+  .feature-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1175,18 +1275,44 @@ img {
     padding: 18px;
   }
 
+  .pricing-spotlight h3 {
+    font-size: clamp(1.9rem, 9vw, 2.8rem);
+  }
+
   .pricing-spotlight-media {
-    min-height: 260px;
+    min-height: 220px;
+  }
+
+  .pricing-head h3 {
+    font-size: 2rem;
   }
 
   .cta-panel {
-    padding: 28px 22px;
+    gap: 20px;
+    padding: 24px 18px;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
   }
 
   .floating-whatsapp {
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
+    display: none;
+  }
+
+  .site-footer {
+    padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    max-width: 8.8ch;
+    font-size: clamp(2.65rem, 13.5vw, 3.55rem);
+  }
+
+  .hero-points li {
+    font-size: 0.92rem;
   }
 }
 
