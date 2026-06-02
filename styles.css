@@ -893,13 +893,75 @@ img {
   margin: 18px 0 0;
 }
 
+.closing-shell {
+  position: relative;
+  margin-top: 18px;
+  padding: 18px 0 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.52), transparent 18%),
+    linear-gradient(180deg, #dfd9d5 0%, #d4cfcb 100%);
+}
+
+.closing-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 52px 52px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.section-closing {
+  position: relative;
+  z-index: 1;
+  padding-top: 44px;
+  padding-bottom: 34px;
+}
+
+.section-closing .cta-panel {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(109, 60, 42, 0.48), transparent 32%),
+    radial-gradient(circle at 82% 82%, rgba(122, 64, 37, 0.34), transparent 26%),
+    linear-gradient(132deg, #352524 0%, #1d1b23 54%, #17161e 100%);
+  border-color: rgba(255, 185, 145, 0.12);
+  box-shadow:
+    0 26px 90px rgba(22, 13, 10, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.section-closing .cta-panel::after {
+  inset: auto -8% -42% auto;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 120, 54, 0.12);
+  filter: blur(18px);
+}
+
+.section-closing .eyebrow {
+  background: rgba(95, 58, 43, 0.26);
+  border-color: rgba(180, 121, 86, 0.24);
+  color: #f6d7c9;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.section-closing .button-secondary {
+  background: rgba(93, 67, 54, 0.34);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
 .site-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 18px 0 56px;
-  color: var(--muted);
+  color: #b0a69c;
+  position: relative;
+  z-index: 1;
 }
 
 .site-footer img {
@@ -909,6 +971,10 @@ img {
 
 .site-footer p {
   margin: 0;
+}
+
+.site-footer small {
+  color: #b9b0a6;
 }
 
 .floating-whatsapp {
@@ -1296,11 +1362,37 @@ img {
     font-size: clamp(2.4rem, 11vw, 3.4rem);
   }
 
+  .closing-shell {
+    margin-top: 10px;
+    padding-top: 6px;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.44), transparent 20%),
+      linear-gradient(180deg, #ddd8d4 0%, #d2cdca 100%);
+  }
+
+  .closing-shell::before {
+    opacity: 0.12;
+    background-size: 40px 40px;
+  }
+
+  .section-closing {
+    padding-top: 32px;
+    padding-bottom: 18px;
+  }
+
+  .section-closing .cta-panel {
+    background:
+      radial-gradient(circle at 14% 14%, rgba(110, 60, 42, 0.42), transparent 34%),
+      radial-gradient(circle at 84% 84%, rgba(118, 68, 42, 0.28), transparent 24%),
+      linear-gradient(132deg, #342524 0%, #1d1b23 56%, #17161e 100%);
+  }
+
   .floating-whatsapp {
     display: none;
   }
 
   .site-footer {
+    gap: 16px;
     padding-bottom: 28px;
   }
 }
